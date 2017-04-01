@@ -8,5 +8,8 @@ android:
   components:
     - tools
     - platform-tools
-    - build-tools-24.0.0
-    - android-24
+    - tools
+    - build-tools-25.0.0
+    - android-25
+
+script: ./gradlew check
