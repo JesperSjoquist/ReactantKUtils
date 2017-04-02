@@ -1,0 +1,71 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'maven-publish'
+
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'reactantutils'
+
+    publishedGroupId = project.GROUP_ID
+    libraryName = project.ARTIFACT_ID
+    artifact = project.ARTIFACT_ID
+
+    libraryDescription = 'A collection of utility methods for Android written in Kotlin'
+
+    siteUrl = 'https://github.com/JesperSjoquist/ReactantUtils'
+    gitUrl = 'https://github.com/JesperSjoquist/ReactantUtils.git'
+
+    libraryVersion = project.VERSION_NAME
+
+    developerId = 'JesperSjoquist'
+    developerName = 'Jesper Sjöquist'
+    developerEmail = 'jesper.sjoquist@gmail.com'
+
+    licenseName = 'MIT'
+    licenseUrl = 'http://www.opensource.org/licenses/mit-license.php'
+    allLicenses = ["MIT"]
+}
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.0"
+
+    defaultConfig {
+        minSdkVersion 8
+        targetSdkVersion 25
+        versionCode project.VERSION_CODE.toInteger()
+        versionName project.VERSION_NAME
+
+    }
+}
+
+task sourceJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier "source"
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId project.GROUP_ID
+            artifactId project.ARTIFACT_ID
+            version project.VERSION_NAME
+            artifact(sourceJar)
+            artifact("$buildDir/outputs/aar/${project.getName()}-release.aar")
+        }
+    }
+    repositories {
+        maven {
+            url "$buildDir/repo"
+        }
+    }
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    compile 'com.google.code.gson:gson:2.8.0'
+    testCompile 'junit:junit:4.12'
+}
+
+// Upload to Bintray
+apply plugin: 'com.jfrog.bintray'
