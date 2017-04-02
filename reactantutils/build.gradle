@@ -68,4 +68,5 @@ dependencies {
 }
 
 // Upload to Bintray
-apply plugin: 'com.jfrog.bintray'
+apply from: '../gradle/bintray/install.gradle'
+apply from: '../gradle/bintray/bintray.gradle'
