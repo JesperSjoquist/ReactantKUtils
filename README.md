@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/JesperSjoquist/ReactantKUtils.svg?branch=master)](https://travis-ci.org/JesperSjoquist/ReactantKUtils)
+[![Build Status](https://travis-ci.org/JesperSjoquist/ReactantUtils.svg?branch=master)](https://travis-ci.org/JesperSjoquist/ReactantUtils)
 
 # ReactantKUtils
 A collection of Kotlin utility methods for Android
