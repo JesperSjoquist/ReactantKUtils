@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/JesperSjoquist/ReactantUtils.svg?branch=master)](https://travis-ci.org/JesperSjoquist/ReactantUtils)
+[![Build Status](https://travis-ci.org/JesperSjoquist/ReactantUtils.svg?branch=master)](https://travis-ci.org/JesperSjoquist/ReactantUtils) [![Download](null/packages/jespersjoquist/maven/reactantutils/images/download.svg?version=0.0.3) ](https://bintray.com/jespersjoquist/maven/reactantutils/0.0.3/link)
 
 # ReactantUtils
 A collection of utility methods for Android written in Kotlin
